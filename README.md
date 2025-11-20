@@ -59,6 +59,7 @@ home-trainer/
 ├── game_logic.py        # Lógica del juego, HUD y sistema de puntuación
 ├── gestures.py          # Detección de gestos y posturas
 ├── utils.py             # Funciones auxiliares (cálculo de ángulos)
+├── .gitignore           # Archivos/directorios ignorados por Git  
 └── README.md            # Este archivo
 ```
 
