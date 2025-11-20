@@ -43,7 +43,7 @@ source venv/bin/activate
 
 ### 4. Instalar dependencias
 ```bash
-pip install opencv-python mediapipe numpy
+pip install requirements.txt
 ```
 
 O alternativamente, si se proporciona un archivo requirements.txt:
