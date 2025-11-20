@@ -1,7 +1,7 @@
 # Home Trainer 1.0 - Entrenamiento Postural con Visión por Computador
 
 **Asignatura:** Interacción Persona-Máquina  
-**Autor:** [Tu nombre completo]  
+**Autor:** Joaquín Sigüenza Chilar 
 **Fecha:** Noviembre 2025
 
 ## Descripción del Proyecto
@@ -12,7 +12,7 @@ El juego implementa un sistema progresivo de niveles con diferentes ejercicios p
 
 ## Requisitos del Sistema
 
-- Python 3.8 o superior
+- Python 3.12 recomendado
 - Webcam funcional
 - Sistema operativo: Windows, macOS o Linux
 - Mínimo 4GB de RAM
@@ -131,42 +131,3 @@ Para un funcionamiento óptimo:
 - **MediaPipe:** Detección de pose corporal en tiempo real
 - **NumPy:** Cálculos matemáticos y de ángulos
 - **Python:** Lenguaje de programación base
-
-## Problemas Conocidos y Soluciones
-
-**Problema:** La cámara no se detecta  
-**Solución:** Verifica que ninguna otra aplicación esté usando la webcam
-
-**Problema:** Detección imprecisa de poses  
-**Solución:** Mejora la iluminación y asegúrate de estar completamente visible
-
-**Problema:** El juego va lento  
-**Solución:** Cierra otras aplicaciones y reduce la resolución de la cámara en el código si es necesario
-
-## Justificación como Juego Serio
-
-Home Trainer 1.0 cumple con los criterios de un juego serio al:
-
-1. **Objetivo educativo/terapéutico:** Enseña y practica ejercicios de fisioterapia y entrenamiento postural
-2. **Motivación mediante gamificación:** Sistema de puntos, estrellas, logros y progresión de niveles
-3. **Feedback inmediato:** Validación en tiempo real de la correcta ejecución
-4. **Progresión adaptativa:** Tres niveles de dificultad ajustables
-5. **Aplicación en salud:** Útil para rehabilitación física, prevención de lesiones y mantenimiento de movilidad
-
-## Posibles Mejoras Futuras
-
-- Guardado de progreso y estadísticas
-- Más ejercicios y rutinas personalizables
-- Modo multijugador o competitivo
-- Integración con dispositivos de salud
-- Análisis de calidad de movimiento con IA
-
-## Referencias
-
-- MediaPipe Pose: https://google.github.io/mediapipe/solutions/pose
-- OpenCV Documentation: https://docs.opencv.org/
-- Repositorio base: https://github.com/CarloHSUA/IPM/
-
----
-
-**Nota:** Este proyecto ha sido desarrollado con fines educativos para la asignatura de Interacción Persona-Máquina. No sustituye el asesoramiento médico profesional.
