@@ -10,6 +10,10 @@ Home Trainer 1.0 es un videojuego serio desarrollado para la rehabilitación fí
 
 El juego implementa un sistema progresivo de niveles con diferentes ejercicios posturales, desde movimientos básicos como levantar un brazo hasta posturas más complejas como la postura del guerrero de yoga. Incluye un sistema de puntuación con estrellas, feedback visual, guías en pantalla y múltiples niveles de dificultad.
 
+## Enlaces
+
+- **Video demostrativo:** [https://www.youtube.com/watch?v=krmX4XNDFZ8](https://www.youtube.com/watch?v=krmX4XNDFZ8)
+
 ## Requisitos del Sistema
 
 - Python 3.12 recomendado
