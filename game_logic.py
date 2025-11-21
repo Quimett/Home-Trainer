@@ -43,16 +43,19 @@ class Game:
         if self.dificultad == "facil":
             self.tiempo_nivel_3 = 2
             self.tiempo_nivel_7 = 3
+            self.tiempo_nivel_10 = 1
             self.repeticiones_nivel_6 = 2
             self.repeticiones_nivel_9 = 2
         elif self.dificultad == "normal":
             self.tiempo_nivel_3 = 3
             self.tiempo_nivel_7 = 5
+            self.tiempo_nivel_10 = 2
             self.repeticiones_nivel_6 = 3
             self.repeticiones_nivel_9 = 3
         else:  # dificil
             self.tiempo_nivel_3 = 5
             self.tiempo_nivel_7 = 8
+            self.tiempo_nivel_10 = 4
             self.repeticiones_nivel_6 = 5
             self.repeticiones_nivel_9 = 4
 
@@ -192,8 +195,8 @@ class Game:
             6: f"Eleva las rodillas alternando ({self.repeticiones_nivel_6} veces)",
             7: f"Manten postura recta {self.tiempo_nivel_7}s",
             8: "Realiza una sentadilla",
-            9: "Brazos en cruz (T-Pose) 3s",
-            10: "Postura del guerrero 4s",
+            9: "Brazos en cruz (T-Pose)",
+            10: f"Postura del guerrero {self.tiempo_nivel_10}s",
             11: "Salta"
         }
         
@@ -271,13 +274,13 @@ class Game:
             elif self.nivel == 7:
                 self._actualizar_temporizador(gesto_detectado, tiempo, self.tiempo_nivel_7, 200)
 
-            # Nivel 9: brazos en cruz
-            elif self.nivel == 9:
-                self._actualizar_temporizador(gesto_detectado, tiempo, 3, 150)
+            # Nivel 9: brazos en cruz (ahora detección instantánea)
+            elif self.nivel == 9 and gesto_detectado:
+                self._completar_nivel(tiempo, 150)
 
             # Nivel 10: postura guerrero
             elif self.nivel == 10:
-                self._actualizar_temporizador(gesto_detectado, tiempo, 4, 200)
+                self._actualizar_temporizador(gesto_detectado, tiempo, self.tiempo_nivel_10, 200)
 
             # Nivel 11: Salto (detección instantánea)
             elif self.nivel == 11 and gesto_detectado:
@@ -372,10 +375,9 @@ class Game:
             self._texto_con_sombra(frame, f"Racha: {self.racha_actual}", 
                                    (w - 195, 30), cv2.FONT_HERSHEY_DUPLEX, 0.7, (255, 150, 255), 2)
         
-        # Temporizador para niveles con duración
-        if self.nivel in [3, 7, 9, 10] and self.objetivo_activo:
-            duraciones = {3: self.tiempo_nivel_3, 7: self.tiempo_nivel_7, 
-                         9: 3, 10: 4}
+        # Temporizador para niveles con duración (9 ahora es instantáneo)
+        if self.nivel in [3, 7, 10] and self.objetivo_activo:
+            duraciones = {3: self.tiempo_nivel_3, 7: self.tiempo_nivel_7, 10: self.tiempo_nivel_10}
             self._dibujar_temporizador(frame, duraciones[self.nivel])
         
         # Feedback temporal
